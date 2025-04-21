@@ -13,6 +13,7 @@ func main(){
 	// var age int = 20
 
 	// shorthand syntax
+	// this syntax is : -> handle data type and declare and sath ki sath value de dene 
 	// name:="Harash"
     //   name:=12
 
