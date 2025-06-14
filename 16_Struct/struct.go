@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	
 	"time"
 )
 
@@ -11,6 +12,17 @@ type order struct{
 	status string
 	createdAt time.Time  // Time -> nanosecond precision
 
+}
+
+func newOrder(id string, amount float32, status string) *order{
+	// initial setup goes here...
+    myorder := order{
+		id: id,
+		amount: amount,
+		status: status ,
+		createdAt: time.Now(),
+	}
+	return &myorder
 }
 
 // receiver type
@@ -23,18 +35,20 @@ func (o order) getAmount() float32{
 }
 
 func main(){
+// 	myorder:=newOrder("1",23.50,"received")
+//   fmt.Println(myorder.status)
 	// if you don't set any field, default value is zero value
 	// int => 0, float => 0, string "", bool => false
-    myorder := order{
-		id: "1",
-		amount: 23.4,
-		status: "received",
-		createdAt: time.Now(),
-	}
+    // myorder := order{
+	// 	id: "1",
+	// 	amount: 23.4,
+	// 	status: "received",
+	// 	createdAt: time.Now(),
+	// }
 
-	myorder.changeStatus("confrimed")
+	// myorder.changeStatus("confrimed")
 	
-	fmt.Print(myorder.getAmount())
+	// fmt.Print(myorder.getAmount())
 
 	// myorder2 := order{
 	// 	id: "2",
@@ -48,4 +62,12 @@ func main(){
 	// fmt.Println(myorder.amount)
 
 	// fmt.Println("Order Struct ",myorder)
+
+
+	language:=struct {
+		name  string
+		isGood bool
+	}{"good",true}
+
+	fmt.Print(language)
 }
